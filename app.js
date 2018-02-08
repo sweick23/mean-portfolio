@@ -12,7 +12,7 @@ app.use(cors());
 // bodyParser middleware
 app.use(bodyParser.json());
 
-const PORT = 8080;
+const port = process.env.PORT || 8080;
 
 //set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,6 +23,6 @@ app.get('*', (req, res) => {
 })
 
 // Start Server
-app.listen(PORT, () => {
-console.log('Your app is listening on port', PORT);
+app.listen(port, () => {
+console.log('Your app is listening on port', port);
 });
